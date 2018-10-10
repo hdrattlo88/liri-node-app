@@ -22,6 +22,6 @@ If you choose search for song, you will be prompted to enter a song name. If app
 
 If you choose search for a concert, you will be prompted to enter an artist's name. If the app is working properly, you will see the next available concert.
 
-If you choose do something...well you will see ;p
+If you choose do something...well you will see ;p (Be sure to click the link.)
 
 
