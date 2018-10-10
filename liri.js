@@ -93,16 +93,23 @@ console.log(data);
 // movie();
 // concert();
 
+//build recursive function here
+function ask(){
 //Build the logic for the questions here
+var asked = false;
+console.log("\n**************************\n")
+console.log("  ***Hit CTRL + C To Exit***");
+console.log("\n**************************\n");
 
 inquirer.prompt([
 {
     type: "list",
     name: "start",
-    message: "Hello, I am Liri your movie, music, and concert info hub.\n How can I help you?",
+    message: "Hello, I am Liri your movie, music, and concert info hub.\n How can I help you?\n",
     choices: ["Search for movie", "Search for song", "Search for concert","Do something"]
     
   }
+  
 ])
 
 .then(function(response) {
@@ -120,12 +127,17 @@ if (start === "Search for movie") {
             message: "Enter a movie name.",
           }
         ])
+        
     .then(function(response) {
+        asked = true;
         answer = response.movieSearch;
-           movie();
-          
+           movie(); 
+           console.log("==========================");
+           if(asked === true){
+            ask();
+        }
         })
-
+        
   }
   if(start === "Search for song"){
       console.log("******************************");
@@ -139,9 +151,13 @@ if (start === "Search for movie") {
         }
     ])
     .then(function(response){
+        asked = true;
         song = response.songSearch;
         songSearch();
-        
+        console.log("============================");
+        if(asked === true){
+            ask();
+            }
     })
   }
   if(start === "Search for concert"){
@@ -156,18 +172,26 @@ if (start === "Search for movie") {
           }
       ])
       .then(function(response){
+          asked = true;
           bandName = response.concertSearch;
           concert();
-          
+          console.log("============================");
+        if(asked === true){
+            ask();
+            }
       })
   }
   if(start === "Do something"){
+      asked = true;
     console.log("______________________________");
     console.log("        Hmmmmmmm......Okay");
     console.log("______________________________");
    doSomething();
-  
+   console.log("============================");
+   if(asked === true){
+       ask();
+       }
 }
 })
-
-
+}
+ask();
