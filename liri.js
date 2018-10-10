@@ -72,12 +72,20 @@ function songSearch() {
     });
 }
 
+
 function doSomething(){
     fs.readFile("random.txt", "utf8", function(error, data){
-        console.log(data);
-})
-}
-
+console.log(data);
+ 
+        spotify.search({ type: 'track', query: data , limit: 1 }, function (err, data) {
+            console.log(data.tracks.items[0].preview_url);
+            if (error) {
+                return console.log('Error occurred: ' + err);
+            }
+        
+        });
+    })
+    }
 
 
 //These are the function calls to make the api's work
@@ -161,4 +169,5 @@ if (start === "Search for movie") {
   
 }
 })
+
 
