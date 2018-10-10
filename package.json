@@ -1,0 +1,32 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Siri like CLI that returns data on movies, music, and concerts.",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdrattlo88/liri-node-app.git"
+  },
+  "keywords": [
+    "liri"
+  ],
+  "author": "Heather Drattlo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdrattlo88/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/hdrattlo88/liri-node-app#readme",
+  "dependencies": {
+    "bandsintown": "^1.0.1",
+    "dotenv": "^6.0.0",
+    "fs": "0.0.1-security",
+    "inquirer": "^6.2.0",
+    "moment": "^2.22.2",
+    "node-spotify-api": "^1.0.7",
+    "require": "^2.4.20"
+  }
+}
