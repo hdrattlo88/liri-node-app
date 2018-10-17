@@ -1,4 +1,6 @@
-require("dotenv").config();
+require("dotenv").config("dependencies": {
+  "uglify-js": ">=2.6.0"
+});
 var request = require("request");
 var inquirer = require("inquirer");
 var input = process.argv[2];
@@ -9,6 +11,7 @@ var moment = require("moment");
 var keys = require("./keys");
 var fs = require("fs");
 var spotify = new Spotify(keys.spotify);
+
 
 // OMDB Stuff
 function movie() {
